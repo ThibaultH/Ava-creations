@@ -14,8 +14,8 @@
     <section class="section imagiers">
         <div class="row">
             <div class="images">
-                <div class="image"><img src="F&L.jpg" alt="Image 1"></div>
-                <div class="image"><img src="Page de garde Animaux.jpg" alt="Image 2"></div>
+                <div class="image"><img src="images/img1.jpg" alt="Image 1"></div>
+                <div class="image"><img src="images/img2.jpg" alt="Image 2"></div>
                 <div class="image"><img src="images/img3.jpg" alt="Image 3"></div>
             </div>
             <h2>Imagiers</h2>
@@ -42,6 +42,21 @@
         </div>
     </section>
 
+    <!-- NOUVELLE SECTION COULEURS -->
+    <section class="section couleurs">
+        <div class="row">
+            <div class="images">
+                <div class="image">
+                    <img src="images/couleur1.jpg" alt="Couleur 1" class="hover-img" data-hover="images/couleur1-hover.jpg">
+                </div>
+                <div class="image">
+                    <img src="images/couleur2.jpg" alt="Couleur 2" class="hover-img" data-hover="images/couleur2-hover.jpg">
+                </div>
+            </div>
+            <h2>Couleurs</h2>
+        </div>
+    </section>
+
     <section class="section alphabet">
         <div class="row">
             <div class="images">
@@ -52,20 +67,25 @@
         </div>
     </section>
 
-    <section class="section couleurs">
-        <div class="row">
-            <div class="images">
-                <div class="image"><img src="F&L.jpg" alt="Image 1"></div>
-                <div class="image"><img src="Page de garde Animaux.jpg" alt="Image 2"></div>
-                <div class="image"><img src="images/img3.jpg" alt="Image 3"></div>
-            </div>
-            <h2>Couleurs</h2>
-        </div>
-    </section>
-
     <footer class="footer">
         <div class="contact">CONTACT</div>
         <div class="bottom-footer">FOOTER</div>
     </footer>
+
+    <!-- SCRIPT POUR CHANGEMENT D'IMAGE AU HOVER -->
+    <script>
+    document.querySelectorAll('.hover-img').forEach(img => {
+        const originalSrc = img.src;
+        const hoverSrc = img.dataset.hover;
+
+        img.addEventListener('mouseover', () => {
+            img.src = hoverSrc;
+        });
+
+        img.addEventListener('mouseout', () => {
+            img.src = originalSrc;
+        });
+    });
+    </script>
 </body>
 </html>
