@@ -16,24 +16,16 @@ body {
     text-align: center;
 }
 
-.logo {
+.logo-img {
     width: 150px;
-    height: 80px;
-    background-color: #126E8F;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
+    height: auto;
 }
 
+/* Sections */
 .section {
     padding: 20px;
-    height: 350px;
 }
 
-/* Couleurs de section */
 .imagiers {
     background-color: #A8EAEF;
 }
@@ -46,14 +38,15 @@ body {
     background-color: #F97D3C;
 }
 
-.alphabet {
-    background-color: #D54F7A;
-}
-
 .couleurs {
     background-color: #B1D36B;
 }
 
+.alphabet {
+    background-color: #D54F7A;
+}
+
+/* Layout */
 .row {
     display: flex;
     align-items: center;
@@ -79,7 +72,7 @@ body {
     justify-content: center;
 }
 
-/* Style des images + transition */
+/* Images */
 .image img {
     width: 100%;
     height: 100%;
