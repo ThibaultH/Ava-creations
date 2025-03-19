@@ -30,7 +30,6 @@ body {
 
 .section {
     padding: 20px;
-    text-align: center;
 }
 
 .imagiers {
@@ -49,11 +48,17 @@ body {
     background-color: #D54F7A;
 }
 
+.row {
+    display: flex;
+    align-items: center;       
+    justify-content: space-between; 
+    flex-wrap: wrap;           
+    gap: 15px;
+}
+
 .images {
     display: flex;
-    justify-content: center;
     gap: 15px;
-    margin-bottom: 10px;
     flex-wrap: wrap;
 }
 
@@ -67,8 +72,9 @@ body {
     font-weight: bold;
 }
 
-h2 {
+.section h2 {
     font-size: 1.8rem;
+    white-space: nowrap;
 }
 
 .footer {
