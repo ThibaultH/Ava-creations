@@ -47,6 +47,10 @@ body {
     background-color: #D54F7A;
 }
 
+.couleurs {
+    background-color: #FF3633;
+}
+
 .row {
     display: flex;
     align-items: center;
