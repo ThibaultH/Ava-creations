@@ -27,28 +27,23 @@ body {
 }
 
 .imagiers {
-    background-color: #A8EAEF;
-    opacity: 0.5;
+    background-color: rgba(168, 234, 239, 0.5);
 }
 
 .memo {
-    background-color: #FFF27C;
-    opacity: 0.5;
+    background-color: rgba(255, 242, 124, 0.5);
 }
 
 .nombres {
-    background-color: #F97D3C;
-    opacity: 0.5;
+    background-color: rgba(249, 125, 60, 0.5);
 }
 
 .couleurs {
-    background-color: #B1D36B;
-    opacity: 0.5;
+    background-color: rgba(177, 211, 107, 0.5);
 }
 
 .alphabet {
-    background-color: #D54F7A;
-    opacity: 0.5;
+    background-color: rgba(213, 79, 122, 0.5);
 }
 
 /* Layout */
