@@ -56,13 +56,15 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 15px;
+    width: 100%;
 }
 
 .images {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    width: 50%; /* Occupe la moitié gauche */
+    justify-content: flex-start; /* Aligne les images à gauche */
 }
 
 .image {
@@ -85,8 +87,10 @@ body {
 }
 
 .section h2 {
-    font-size: 1.8rem;
     white-space: nowrap;
+    width: 50%; /* Occupe la moitié droite */
+    text-align: center; /* Centre le texte horizontalement */
+    font-size: 2rem;
 }
 
 .footer {
