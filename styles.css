@@ -17,7 +17,7 @@ body {
 }
 
 .logo-img {
-    width: 250px;
+    width: 400px;
     height: auto;
 }
 
@@ -73,7 +73,7 @@ body {
     justify-content: center;
     width: auto;
     height: auto;
-    max-width: 100%;
+    max-width: 30%;
 }
 
 /* Images */
