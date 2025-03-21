@@ -23,7 +23,11 @@ body {
 
 /* Sections */
 .section {
-    padding: 20px;
+    padding: 50px 20px;
+    min-height: 200px;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .imagiers {
@@ -66,7 +70,6 @@ body {
     overflow: hidden;
     width: 200px;
     height: 200px;
-    background-color: #126E8F;
     display: flex;
     align-items: center;
     justify-content: center;
