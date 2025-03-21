@@ -67,6 +67,7 @@ body {
     width: 200px;
     height: 200px;
     background-color: #126E8F;
+    opacity: 0.5;
     display: flex;
     align-items: center;
     justify-content: center;
