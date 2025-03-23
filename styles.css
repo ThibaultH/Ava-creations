@@ -65,6 +65,7 @@ body {
     flex-wrap: wrap;
     width: 50%; /* Occupe la moitié gauche */
     justify-content: flex-start; /* Aligne les images à gauche */
+    align-items: center; /* Centre les images verticalement */
 }
 
 .image {
