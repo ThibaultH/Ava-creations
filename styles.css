@@ -24,7 +24,7 @@ body {
 /* Sections */
 .section {
     padding: 50px 20px;
-    min-height: 300px; /* Augmente la hauteur pour éviter un effet tassé */
+    min-height: 300px;
     width: 100vw;
 }
 
@@ -51,19 +51,20 @@ body {
 /* Layout */
 .row {
     display: flex;
-    align-items: center; /* Centre les éléments de la ligne (images + titre) */
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
 }
 
+/* 🛠 Ajustement des images */
 .images {
     display: flex;
-    flex-direction: column; /* Place les images en colonne */
-    gap: 20px; /* Espacement entre les images */
-    width: 50%; /* Garde la moitié gauche */
-    justify-content: center; /* Centre verticalement */
-    align-items: center; /* Centre horizontalement */
+    flex-wrap: wrap; /* Permet de répartir les images sur plusieurs lignes */
+    gap: 15px;
+    width: 50%; /* La moitié gauche */
+    justify-content: flex-start; /* Aligne les images en haut à gauche */
+    align-items: flex-start;
 }
 
 .image {
@@ -72,21 +73,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%; /* Prend toute la largeur de la zone */
-    max-width: 300px; /* Ajuste la taille des images */
+    width: calc(50% - 10px); /* Deux images par ligne avec espace */
+    max-width: 200px; /* Taille max */
 }
 
+/* Images */
 .image img {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Assure un bon affichage */
+    object-fit: cover;
     transition: opacity 0.4s ease-in-out;
 }
 
 .section h2 {
-    width: 50%; /* Garde la moitié droite */
-    text-align: center; /* Centre le texte */
-    font-size: 2.5rem; /* Corrige l'erreur de virgule */
+    width: 50%;
+    text-align: center;
+    font-size: 2.5rem;
 }
 
 /* Lightbox (carrousel) */
