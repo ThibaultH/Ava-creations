@@ -63,24 +63,26 @@ body {
     flex-wrap: wrap; /* Permet de répartir les images sur plusieurs lignes */
     gap: 15px;
     width: 50%; /* La moitié gauche */
-    justify-content: flex-start; /* Aligne les images en haut à gauche */
-    align-items: flex-start;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
 }
 
+/* 📏 Ajustement de la taille des images */
 .image {
     border-radius: 10px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(50% - 10px); /* Deux images par ligne avec espace */
-    max-width: 200px; /* Taille max */
+    width: calc(45% - 10px); /* Ajuste la largeur */
+    max-width: 300px; /* Augmente la taille max */
 }
 
-/* Images */
+/* 🖼️ Images */
 .image img {
     width: 100%;
     height: auto;
+    max-height: 250px; /* Définition d'une hauteur max pour éviter les images trop grandes */
     object-fit: cover;
     transition: opacity 0.4s ease-in-out;
 }
