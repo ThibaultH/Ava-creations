@@ -66,13 +66,6 @@ body {
     width: 50%; /* Occupe la moitié gauche */
     justify-content: flex-start; /* Aligne les images à gauche */
     align-items: center; /* Centre les images verticalement */
-
-    isplay: flex;
-    
-    gap: 15px; /* Espacement entre les images */
-    width: 50%; /* Garde la moitié gauche */
-    justify-content: center; /* Centre les images verticalement dans la colonne */
-    align-items: center; /* Centre horizontalement */
 }
 
 .image {
