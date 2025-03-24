@@ -74,17 +74,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(45% - 10px); /* Ajuste la largeur */
-    max-width: 300px; /* Augmente la taille max */
+    width: 100%; /* Prend toute la largeur de la colonne */
+    max-width: 400px; /* Augmente la taille max */
 }
 
 /* 🖼️ Images */
 .image img {
     width: 100%;
-    height: auto;
-    max-height: 250px; /* Définition d'une hauteur max pour éviter les images trop grandes */
-    object-fit: cover;
+    height: auto; /* Garde le ratio original */
+    max-height: 100%;
     transition: opacity 0.4s ease-in-out;
+    object-fit: contain; /* Assure que l'image est bien affichée sans être coupée */
 }
 
 .section h2 {
