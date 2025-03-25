@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ava Creations</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
         <img src="lOGO2.png" alt="Logo" class="logo-img">
     </header>
 
+    <!-- Sections avec images alignées -->
     <section class="section imagiers">
         <div class="row">
             <div class="images">
-                <div class="image">
-                    <img src="Page de garde Animaux.png" alt="Image 1" class="hover-img" data-hover="images/img1-hover.jpg">
-                </div>
-                <div class="image">
-                    <img src="F&L.png" alt="Image 2" class="hover-img" data-hover="images/img2-hover.jpg">
-                </div>
-                <div class="image">
-                    <img src="Camion de Pompier.png" alt="Image 3" class="hover-img" data-hover="images/img3-hover.jpg">
-                </div>
+                <img src="Page de garde Animaux.png" alt="Animaux" class="hover-img" data-hover="images/img1-hover.jpg">
+                <img src="F&L.png" alt="Fruits & Légumes" class="hover-img" data-hover="images/img2-hover.jpg">
+                <img src="Camion de Pompier.png" alt="Pompier" class="hover-img" data-hover="images/img3-hover.jpg">
             </div>
             <h2>Imagiers</h2>
         </div>
@@ -31,12 +26,8 @@
     <section class="section memo">
         <div class="row">
             <div class="images">
-                <div class="image">
-                    <img src="Paysan.png" alt="Image 4" class="hover-img" data-hover="images/img4-hover.jpg">
-                </div>
-                <div class="image">
-                    <img src="Potager Memo.png" alt="Image 5" class="hover-img" data-hover="images/img5-hover.jpg">
-                </div>
+                <img src="Paysan.png" alt="Paysan" class="hover-img" data-hover="images/img4-hover.jpg">
+                <img src="Potager Memo.png" alt="Potager" class="hover-img" data-hover="images/img5-hover.jpg">
             </div>
             <h2>Mémo</h2>
         </div>
@@ -45,12 +36,8 @@
     <section class="section nombres">
         <div class="row">
             <div class="images">
-                <div class="image">
-                    <img src="images/img6.jpg" alt="Image 6" class="hover-img" data-hover="images/img6-hover.jpg">
-                </div>
-                <div class="image">
-                    <img src="images/img7.jpg" alt="Image 7" class="hover-img" data-hover="images/img7-hover.jpg">
-                </div>
+                <img src="images/img6.jpg" alt="Image 6" class="hover-img" data-hover="images/img6-hover.jpg">
+                <img src="images/img7.jpg" alt="Image 7" class="hover-img" data-hover="images/img7-hover.jpg">
             </div>
             <h2>Nombres</h2>
         </div>
@@ -59,12 +46,8 @@
     <section class="section couleurs">
         <div class="row">
             <div class="images">
-                <div class="image">
-                    <img src="Les couleurs.png" alt="Couleur 1" class="hover-img" data-hover="Couleurs 1.png">
-                </div>
-                <div class="image">
-                    <img src="images/couleur2.jpg" alt="Couleur 2" class="hover-img" data-hover="images/couleur2-hover.jpg">
-                </div>
+                <img src="Les couleurs.png" alt="Couleur 1" class="hover-img" data-hover="Couleurs 1.png">
+                <img src="images/couleur2.jpg" alt="Couleur 2" class="hover-img" data-hover="images/couleur2-hover.jpg">
             </div>
             <h2>Couleurs</h2>
         </div>
@@ -73,12 +56,8 @@
     <section class="section alphabet">
         <div class="row">
             <div class="images">
-                <div class="image">
-                    <img src="Abécédaire.png" alt="Image 8" class="hover-img" data-hover="images/img8-hover.jpg">
-                </div>
-                <div class="image">
-                    <img src="images/img9.jpg" alt="Image 9" class="hover-img" data-hover="images/img9-hover.jpg">
-                </div>
+                <img src="Abécédaire.png" alt="Alphabet" class="hover-img" data-hover="images/img8-hover.jpg">
+                <img src="images/img9.jpg" alt="Image 9" class="hover-img" data-hover="images/img9-hover.jpg">
             </div>
             <h2>Alphabet</h2>
         </div>
@@ -89,83 +68,6 @@
         <div class="bottom-footer">FOOTER</div>
     </footer>
 
-    <!-- Hover Script pour toutes les images -->
-    <script>
-
-// 🎨 Effet hover sur les images
-document.querySelectorAll('.hover-img').forEach(img => {
-    const originalSrc = img.src;
-    const hoverSrc = img.dataset.hover;
-
-    img.addEventListener('mouseover', () => {
-        img.src = hoverSrc;
-    });
-
-    img.addEventListener('mouseout', () => {
-        img.src = originalSrc;
-    });
-});
-
-// 📸 Carrousel d'images
-const images = document.querySelectorAll('.hover-img');
-const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
-lightbox.classList.add('lightbox');
-lightbox.innerHTML = `
-    <span class="close-btn">&times;</span>
-    <img id="lightbox-img" src="" alt="Agrandissement" />
-    <button class="prev-btn">&#10094;</button>
-    <button class="next-btn">&#10095;</button>
-`;
-document.body.appendChild(lightbox);
-
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.close-btn');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-
-let currentIndex = 0;
-let imageList = [];
-
-// 📌 Ouvrir le carrousel au clic sur une image
-images.forEach((img, index) => {
-    img.addEventListener('click', () => {
-        imageList = Array.from(images).map(image => image.src);
-        currentIndex = index;
-        updateLightbox();
-        lightbox.style.display = 'flex';
-    });
-});
-
-// 🔄 Mettre à jour l'image du carrousel
-function updateLightbox() {
-    lightboxImg.src = imageList[currentIndex];
-}
-
-// ⬅➡ Navigation entre les images
-prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Empêche la fermeture du carrousel
-    currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
-    updateLightbox();
-});
-
-nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Empêche la fermeture du carrousel
-    currentIndex = (currentIndex + 1) % imageList.length;
-    updateLightbox();
-});
-
-// ❌ Fermer le carrousel
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
-
-// 📌 Fermer en cliquant en dehors de l'image et des boutons
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-    }
-});
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
