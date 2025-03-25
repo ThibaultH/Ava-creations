@@ -48,7 +48,7 @@ body {
 /* 🖼️ Alignement des images */
 .images {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 15px;
     width: 60%;
     justify-content: center;
@@ -58,7 +58,7 @@ body {
 .images img {
     width: 100%;
     max-width: 300px;
-    height: 250px;
+    height: auto;
     object-fit: cover; /* Assure un bon cadrage */
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
