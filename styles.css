@@ -17,7 +17,7 @@ body {
 }
 
 .logo-img {
-    width: 400px;
+    width: 300px;
     height: auto;
 }
 
@@ -25,72 +25,54 @@ body {
 .section {
     padding: 50px 20px;
     min-height: 300px;
-    width: 100vw;
+    width: 100%;
 }
 
-.imagiers {
-    background-color: rgba(168, 234, 239, 0.5);
-}
+/* 🌈 Couleurs de sections */
+.imagiers { background-color: rgba(168, 234, 239, 0.5); }
+.memo { background-color: rgba(255, 242, 124, 0.5); }
+.nombres { background-color: rgba(249, 125, 60, 0.5); }
+.couleurs { background-color: rgba(177, 211, 107, 0.5); }
+.alphabet { background-color: rgba(213, 79, 122, 0.5); }
 
-.memo {
-    background-color: rgba(255, 242, 124, 0.5);
-}
-
-.nombres {
-    background-color: rgba(249, 125, 60, 0.5);
-}
-
-.couleurs {
-    background-color: rgba(177, 211, 107, 0.5);
-}
-
-.alphabet {
-    background-color: rgba(213, 79, 122, 0.5);
-}
-
-/* Layout */
+/* 📏 Alignement des éléments */
 .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
+    padding: 20px 0;
 }
 
-/* 🛠 Ajustement des images */
+/* 🖼️ Alignement des images */
 .images {
     display: flex;
-    flex-wrap: wrap; /* Permet de répartir les images sur plusieurs lignes */
+    flex-wrap: wrap;
     gap: 15px;
-    width: 50%; /* La moitié gauche */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-}
-
-/* 📏 Ajustement de la taille des images */
-.image {
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    width: 60%;
     justify-content: center;
-    width: 100%; /* Prend toute la largeur de la colonne */
-    max-width: 400px; /* Augmente la taille max */
+    align-items: center;
 }
 
-/* 🖼️ Images */
-.image img {
+.images img {
     width: 100%;
-    height: auto; /* Garde le ratio original */
-    max-height: 100%;
-    transition: opacity 0.4s ease-in-out;
-    object-fit: contain; /* Assure que l'image est bien affichée sans être coupée */
+    max-width: 300px;
+    height: 250px;
+    object-fit: cover; /* Assure un bon cadrage */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.section h2 {
-    width: 50%;
+.images img:hover {
+    transform: scale(1.05);
+}
+
+/* 📌 Titres */
+h2 {
+    width: 40%;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 /* Lightbox (carrousel) */
@@ -139,6 +121,7 @@ body {
 /* Footer */
 .footer {
     text-align: center;
+    margin-top: 20px;
 }
 
 .contact {
