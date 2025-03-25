@@ -114,6 +114,12 @@ prevBtn.onclick = () => { currentIndex = (currentIndex - 1 + imageList.length) %
 nextBtn.onclick = () => { currentIndex = (currentIndex + 1) % imageList.length; updateLightbox(); };
 closeBtn.onclick = () => { lightbox.style.display = 'none'; };
 
+// 📌 Fermer le carrousel en cliquant sur le fond noir
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
 
 </script>
 
