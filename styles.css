@@ -9,12 +9,12 @@
 body {
     background-color: white;
     color: black;
+    text-align: center;
 }
 
-/* 🏠 Header */
+/* Header */
 .header {
     padding: 20px;
-    text-align: center;
 }
 
 .logo-img {
@@ -22,63 +22,59 @@ body {
     height: auto;
 }
 
-/* 📌 Sections */
+/* Sections */
 .section {
     padding: 40px 20px;
-    width: 100%;
-    text-align: center; /* Centre le texte */
 }
 
-/* 🌈 Couleurs */
+/* Couleurs */
 .imagiers { background-color: rgba(168, 234, 239, 0.5); }
 .memo { background-color: rgba(255, 242, 124, 0.5); }
-.nombres { background-color: rgba(249, 125, 60, 0.5); }
-.couleurs { background-color: rgba(177, 211, 107, 0.5); }
-.alphabet { background-color: rgba(213, 79, 122, 0.5); }
 
-/* 📌 Titres */
+/* Titres */
 h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
-/* 🖼️ Images */
-.images {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+/* Grille d'images */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .image-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 300px;
+    text-align: center;
 }
 
-.images img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
+.image-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
-.images img:hover {
+.image-container img:hover {
     transform: scale(1.05);
 }
 
-/* 📝 Texte sous les images */
+/* Texte sous les images */
 .image-caption {
-    margin-top: 10px;
+    margin-top: 8px;
     font-size: 1rem;
     color: #555;
-    text-align: center;
     font-style: italic;
 }
 
-/* 📌 Carrousel */
+/* Lightbox */
 .lightbox {
     display: none;
     position: fixed;
@@ -98,7 +94,7 @@ h2 {
     border-radius: 10px;
 }
 
-/* ❌ Bouton de fermeture */
+/* Bouton de fermeture */
 .close-btn {
     position: absolute;
     top: 20px;
@@ -108,7 +104,7 @@ h2 {
     cursor: pointer;
 }
 
-/* ⬅️➡️ Flèches */
+/* Flèches */
 .prev-btn, .next-btn {
     position: absolute;
     top: 50%;
@@ -129,14 +125,14 @@ h2 {
 .prev-btn { left: 10%; }
 .next-btn { right: 10%; }
 
-/* 📱 Responsive */
+/* Responsive */
 @media screen and (max-width: 768px) {
-    .images {
-        flex-direction: column;
-        align-items: center;
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
-    
+
     h2 {
         font-size: 1.8rem;
     }
 }
+
