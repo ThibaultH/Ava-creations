@@ -11,10 +11,10 @@
         <img src="lOGO2.png" alt="Logo" class="logo-img">
     </header>
 
-    <!-- Sections avec images alignées -->
+    <!-- Section Imagiers -->
     <section class="section imagiers">
         <h2>Les Trousseaux Imagiers</h2>
-        <div class="images">
+        <div class="image-grid">
             <div class="image-container">
                 <img src="Page de garde Animaux.png" alt="Animaux" class="hover-img" data-carousel="animaux">
                 <p class="image-caption">20 animaux</p>
@@ -23,28 +23,25 @@
                 <img src="F&L.png" alt="Fruits & Légumes" class="hover-img" data-carousel="fruits-legumes">
                 <p class="image-caption">20 fruits et légumes</p>
             </div>
-
-            
             <div class="image-container">
                 <img src="Les chiffres.png" alt="Chiffres" class="hover-img" data-carousel="nombres">
                 <p class="image-caption">Les chiffres</p>
             </div>
             <div class="image-container">
-                <img src="Les couleurs.png" alt="Couleur 1" class="hover-img" data-carousel="couleurs">
+                <img src="Les couleurs.png" alt="Couleurs" class="hover-img" data-carousel="couleurs">
                 <p class="image-caption">Couleurs</p>
             </div>
             <div class="image-container">
                 <img src="Abécédaire.png" alt="Alphabet" class="hover-img" data-carousel="alphabet">
                 <p class="image-caption">Abécédaire</p>
             </div>
-
-            
         </div>
     </section> 
 
+    <!-- Section Mémo -->
     <section class="section memo">
         <h2>Mémo</h2>
-        <div class="images">
+        <div class="image-grid">
             <div class="image-container">
                 <img src="Paysan.png" alt="Paysan" class="hover-img" data-carousel="paysan">
                 <p class="image-caption">Ferme</p>
@@ -56,17 +53,16 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="contact">CONTACT
-        <p>06.35.18.85.78</p>
+            <p>06.35.18.85.78</p>
             <p>moraisanaalice@gmail.com</p>
         </div>
         <div class="bottom-footer">FOOTER</div>
     </footer>
 
-    <script src="script.js"></script>
-
-    <!-- 📸 Lightbox (Carrousel) -->
+    <!-- Lightbox (Carrousel) -->
     <div id="lightbox" class="lightbox">
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="" alt="Image agrandie" />
@@ -74,6 +70,7 @@
         <button class="next-btn">&#10095;</button>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
 
@@ -81,7 +78,6 @@
 
 
 <script>
-// 📸 Sélection des images et création des carrousels
 const images = document.querySelectorAll('.hover-img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
@@ -92,65 +88,31 @@ const nextBtn = document.querySelector('.next-btn');
 let currentIndex = 0;
 let imageList = [];
 
-// 📌 Gestion des carrousels spécifiques
+// Carrousels
 const carousels = {
     "animaux": ["Page de garde Animaux.png", "Animaux 1.png", "Lion.png", "Ours.png", "Papillon.png"],
     "fruits-legumes": ["F&L.png", "F&L 1.png", "Banane.png", "Fraise.png", "Carotte.png"],
-    "paysan": ["images/paysan1.jpg", "images/paysan2.jpg", "images/paysan3.jpg"],
-    "potager": ["images/potager1.jpg", "images/potager2.jpg", "images/potager3.jpg"],
-    "nombres": ["Les chiffres.png", "Chiffres 1.png", "1 - Trousseau.png", "5 - Trousseau.png", "7 - Trousseau.png"],
-    "couleurs": ["Les couleurs.png", "Couleurs 1.png", "Bleu.png", "Rose.png", "Orange.png"],
-    "alphabet": ["Abécédaire.png", "A.png", "H.png", "K.png", "N.png", "P.png"]
+    "nombres": ["Les chiffres.png", "Chiffres 1.png", "1 - Trousseau.png", "5 - Trousseau.png"],
+    "couleurs": ["Les couleurs.png", "Couleurs 1.png", "Bleu.png", "Rose.png"],
+    "alphabet": ["Abécédaire.png", "A.png", "H.png", "K.png"]
 };
 
-// 📌 Ouvrir le carrousel propre à chaque image
+// Ouvrir le carrousel
 images.forEach(img => {
     img.addEventListener('click', () => {
         const carouselId = img.getAttribute('data-carousel');
-        if (carouselId && carousels[carouselId]) {
-            imageList = carousels[carouselId]; // Récupérer les images du carrousel
-            currentIndex = 0;
-            updateLightbox();
-            lightbox.style.display = 'flex';
-        } else {
-            // Si pas de carrousel spécifique, on ouvre juste l’image
-            imageList = [img.src];
-            currentIndex = 0;
-            updateLightbox();
-            lightbox.style.display = 'flex';
-        }
+        imageList = carousels[carouselId] || [img.src];
+        currentIndex = 0;
+        updateLightbox();
+        lightbox.style.display = 'flex';
     });
 });
 
-// 🔄 Mettre à jour l'image affichée
-function updateLightbox() {
-    lightboxImg.src = imageList[currentIndex];
-}
-
-// ⬅️➡️ Navigation entre les images
-prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
-    updateLightbox();
-});
-
-nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentIndex = (currentIndex + 1) % imageList.length;
-    updateLightbox();
-});
-
-// ❌ Fermer le carrousel
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
-
-// 📌 Fermer en cliquant sur le fond noir
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-    }
-});
+// Navigation et fermeture
+function updateLightbox() { lightboxImg.src = imageList[currentIndex]; }
+prevBtn.onclick = () => { currentIndex = (currentIndex - 1 + imageList.length) % imageList.length; updateLightbox(); };
+nextBtn.onclick = () => { currentIndex = (currentIndex + 1) % imageList.length; updateLightbox(); };
+closeBtn.onclick = () => { lightbox.style.display = 'none'; };
 
 
 </script>
