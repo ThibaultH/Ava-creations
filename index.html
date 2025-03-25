@@ -31,8 +31,14 @@
     <section class="section memo">
         <div class="row">
             <div class="images">
-                <img src="Paysan.png" alt="Paysan" class="hover-img" data-hover="images/img4-hover.jpg">
-                <img src="Potager Memo.png" alt="Potager" class="hover-img" data-hover="images/img5-hover.jpg">
+                <div class="image-container">
+                    <img src="Paysan.png" alt="Paysan" class="hover-img" data-carousel="paysan">
+                    <p class="image-caption">Paysan</p>
+                </div>
+                <div class="image-container">
+                    <img src="Potager Memo.png" alt="Potager" class="hover-img" data-carousel="potager">
+                    <p class="image-caption">Potager</p>
+                </div>
             </div>
             <h2>Mémo</h2>
         </div>
@@ -41,8 +47,14 @@
     <section class="section nombres">
         <div class="row">
             <div class="images">
-                <img src="Les chiffres.png" alt="Image 6" class="hover-img" data-hover="images/img6-hover.jpg">
-                <img src="images/img7.jpg" alt="Image 7" class="hover-img" data-hover="images/img7-hover.jpg">
+                <div class="image-container">
+                    <img src="Les chiffres.png" alt="Chiffres" class="hover-img" data-carousel="nombres">
+                    <p class="image-caption">Les chiffres</p>
+                </div>
+                <div class="image-container">
+                    <img src="images/img7.jpg" alt="Image 7" class="hover-img" data-carousel="nombres">
+                    <p class="image-caption">Nombres</p>
+                </div>
             </div>
             <h2>Nombres</h2>
         </div>
@@ -51,8 +63,14 @@
     <section class="section couleurs">
         <div class="row">
             <div class="images">
-                <img src="Les couleurs.png" alt="Couleur 1" class="hover-img" data-hover="Couleurs 1.png">
-                <img src="images/couleur2.jpg" alt="Couleur 2" class="hover-img" data-hover="images/couleur2-hover.jpg">
+                <div class="image-container">
+                    <img src="Les couleurs.png" alt="Couleur 1" class="hover-img" data-carousel="couleurs">
+                    <p class="image-caption">Couleurs</p>
+                </div>
+                <div class="image-container">
+                    <img src="images/couleur2.jpg" alt="Couleur 2" class="hover-img" data-carousel="couleurs">
+                    <p class="image-caption">Couleur 2</p>
+                </div>
             </div>
             <h2>Couleurs</h2>
         </div>
@@ -61,8 +79,14 @@
     <section class="section alphabet">
         <div class="row">
             <div class="images">
-                <img src="Abécédaire.png" alt="Alphabet" class="hover-img" data-hover="images/img8-hover.jpg">
-                <img src="images/img9.jpg" alt="Image 9" class="hover-img" data-hover="images/img9-hover.jpg">
+                <div class="image-container">
+                    <img src="Abécédaire.png" alt="Alphabet" class="hover-img" data-carousel="alphabet">
+                    <p class="image-caption">Abécédaire</p>
+                </div>
+                <div class="image-container">
+                    <img src="images/img9.jpg" alt="Image 9" class="hover-img" data-carousel="alphabet">
+                    <p class="image-caption">Alphabet</p>
+                </div>
             </div>
             <h2>Alphabet</h2>
         </div>
@@ -76,15 +100,16 @@
     <script src="script.js"></script>
 
     <!-- 📸 Lightbox (Carrousel) -->
-<div id="lightbox" class="lightbox">
-    <span class="close-btn">&times;</span>
-    <img id="lightbox-img" src="" alt="Image agrandie" />
-    <button class="prev-btn">&#10094;</button>
-    <button class="next-btn">&#10095;</button>
-</div>
-    
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie" />
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+
 </body>
 </html>
+
 
 
 
@@ -104,8 +129,11 @@ let imageList = [];
 const carousels = {
     "animaux": ["Lion.png", "Ours.png", "Papillon.png"],
     "fruits-legumes": ["images/fruits1.jpg", "images/fruits2.jpg", "images/fruits3.jpg"],
-    "pompier": ["images/pompier1.jpg", "images/pompier2.jpg", "images/pompier3.jpg"],
-    "paysan": ["images/paysan1.jpg", "images/paysan2.jpg", "images/paysan3.jpg"]
+    "paysan": ["images/paysan1.jpg", "images/paysan2.jpg", "images/paysan3.jpg"],
+    "potager": ["images/potager1.jpg", "images/potager2.jpg", "images/potager3.jpg"],
+    "nombres": ["images/nombres1.jpg", "images/nombres2.jpg", "images/nombres3.jpg"],
+    "couleurs": ["images/couleurs1.jpg", "images/couleurs2.jpg", "images/couleurs3.jpg"],
+    "alphabet": ["images/alphabet1.jpg", "images/alphabet2.jpg", "images/alphabet3.jpg"]
 };
 
 // 📌 Ouvrir le carrousel propre à chaque image
@@ -156,6 +184,7 @@ lightbox.addEventListener('click', (e) => {
         lightbox.style.display = 'none';
     }
 });
+
 
 </script>
 
