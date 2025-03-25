@@ -104,6 +104,15 @@ h2 {
     cursor: pointer;
 }
 
+/* Texte sous les images */
+.image-caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    font-style: italic;
+}
+
 .prev-btn, .next-btn {
     position: absolute;
     top: 50%;
