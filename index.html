@@ -69,5 +69,69 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- 📸 Lightbox (Carrousel) -->
+<div id="lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" src="" alt="Image agrandie" />
+    <button class="prev-btn">&#10094;</button>
+    <button class="next-btn">&#10095;</button>
+</div>
+    
 </body>
 </html>
+
+
+<script>
+// 📸 Sélection des images et création de la liste
+const images = document.querySelectorAll('.hover-img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close-btn');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let currentIndex = 0;
+let imageList = [];
+
+// 📌 Ouvrir le carrousel au clic sur une image
+images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        imageList = Array.from(images).map(image => image.src);
+        currentIndex = index;
+        updateLightbox();
+        lightbox.style.display = 'flex';
+    });
+});
+
+// 🔄 Mettre à jour l'image affichée
+function updateLightbox() {
+    lightboxImg.src = imageList[currentIndex];
+}
+
+// ⬅️➡️ Navigation avec les flèches
+prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Empêche la fermeture
+    currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+    updateLightbox();
+});
+
+nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % imageList.length;
+    updateLightbox();
+});
+
+// ❌ Fermer le carrousel
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+// 📌 Fermer en cliquant sur le fond noir
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+</script>
+
