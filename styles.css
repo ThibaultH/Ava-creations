@@ -29,8 +29,8 @@ body {
 }
 
 /* Couleurs */
-.imagiers { background-color: rgba(168, 234, 239, 0.2); }
-.memo { background-color: rgba(255, 242, 124, 0.2); }
+.imagiers { background-color: rgba(168, 234, 239, 0.05); }
+.memo { background-color: rgba(255, 242, 124, 0.05); }
 
 /* Titres */
 h2 {
