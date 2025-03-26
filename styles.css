@@ -28,8 +28,8 @@ body {
 }
 
 /* Couleurs */
-.imagiers { background-color: rgba(168, 234, 239, 0.5); }
-.memo { background-color: rgba(255, 242, 124, 0.5); }
+.imagiers { background-color: rgba(168, 234, 239, 0.9); }
+.memo { background-color: rgba(255, 242, 124, 0.9); }
 
 /* Titres */
 h2 {
