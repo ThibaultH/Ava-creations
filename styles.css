@@ -7,7 +7,9 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #f9f9f9, #e6f7ff);
+    background: url('texture.jpg'); /* Remplace par une texture légère */
+    background-size: cover;
+    background-attachment: fixed;
     color: black;
     text-align: center;
 }
