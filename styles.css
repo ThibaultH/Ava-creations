@@ -107,6 +107,27 @@ h2 {
     cursor: pointer;
 }
 
+.info-section {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05); /* Léger fond pour séparer visuellement */
+    padding: 30px 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.info-section p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.5;
+}
+
 /* Flèches */
 .prev-btn, .next-btn {
     position: absolute;
